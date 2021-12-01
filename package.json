@@ -6,11 +6,12 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "build:dev": "rm -r dist; webpack --mode development",
-    "build:prod": "rm -r dist ; webpack --mode production ",
+    "build:dev": "npm run clean && webpack --mode development",
+    "build:prod": "npm run clean && webpack --mode production ",
     "dev": "nodemon -r dotenv/config ./src/index.ts",
     "start": "ts-node ./src/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean" : "rimraf dist/"
   },
   "repository": {
     "type": "git",
